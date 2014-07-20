@@ -52,11 +52,6 @@ set theHTTPSAppName to theReverseDNSName & theHTTPSName & "webapp.plist"
 set theHTTPAppName to do shell script "echo " & quoted form of (theHTTPAppName) & " | tr A-Z a-z"
 set theHTTPSAppName to do shell script "echo " & quoted form of (theHTTPSAppName) & " | tr A-Z a-z"
  
---set theHTTPConfigFile to POSIX file (theApacheFolder & theHTTPConfigName)
---set theHTTPSConfigFile to POSIX file (theApacheFolder & theHTTPSConfigName)
---set theHTTPAppFile to POSIX file (theWebappsFolder & theHTTPAppName)
---set theHTTPSAppFile to POSIX file (theWebappsFolder & theHTTPSAppName)
- 
 set theHTTPConfigFile to theApacheFolder & theHTTPConfigName
 set theHTTPSConfigFile to theApacheFolder & theHTTPSConfigName
  
