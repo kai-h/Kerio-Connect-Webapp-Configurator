@@ -7,7 +7,6 @@ Prerequisites
 -------------
 1. In order for this to be of any use, you need to have Mountain Lion or Mavericks with Server.app.
    You need to have launched the Server app at least once for it to have created the required folder structure. This script doesn't create the target folders if they're not there.
-
 2. Kerio Connect is installed and the HTTP and HTTPS services have been set to ports other than 80 and 443 respectively.
    In the script, the defaults are to add 10000 to the port numbers, so HTTP listens on port 10080 and HTTPS listens on port 10443.
 3. Kerio Connect has been set up with an SSL Certificate. Either a self-signed or a commercial one - it doesn't matter.
@@ -36,12 +35,12 @@ Files
 -----
 This script creates four files on your computer.
 Two Websites configuration .plist files are in /Library/Server/Web/Config/apache2/
-- httpd_KerioConnectwebapp.conf
-- httpd_KerioConnectSSLwebapp.conf
-
-Two Apache configuration .conf files are in /Library/Server/Web/Config/apache2/webapps
 - au.com.automatica.kerioconnectwebapp.plist
 - au.com.automatica.kerioconnectsslwebapp.plist
+
+Two Apache configuration .conf files are in /Library/Server/Web/Config/apache2/webapps
+- httpd_KerioConnectwebapp.conf
+- httpd_KerioConnectSSLwebapp.conf
 
 The reverse DNS name au.com.automatica is configurable as a variable in the AppleScript if you want to change it.
 
