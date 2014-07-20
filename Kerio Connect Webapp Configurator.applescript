@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 -- (c) 2014 Kai Howells, Automatica. kai@automatica.com.au - http://automatica.com.au
 -- version 1.0 20140720
+=======
+-- © 2014 Kai Howells, Automatica. kai@automatica.com.au - http://automatica.com.au
+>>>>>>> 66fdcf5590faa1a05683eb916979529950d3e394
 -- This builds on a how-to guide from Alex Narvey at Precursor Systems - http://www.precursor.ca
 -- as well as my own testing and tweaking.
 -- I would have prefered to have a way to restrict OS X Server's Websites to be restricted to just one IP on the Server,
@@ -10,7 +14,11 @@ display dialog "This applet will create the necessary files for Kerio Connect to
 if button returned of the result = "More Info..." then display dialog "In OS X Lion and above with Server.app providing Services, Server is very aggressive at taking ports 80 and 443 on all IP addresses on the host.
 With this app, you can configure Kerio Connect on a alternative ports for HTTP and HTTPS in the Kerio Connect Administration and then use the built-in webapp support in Server to reverse proxy the connections through from ports 80 and 443 to the alternative ports chosen in the Admin console.
 You can then set up two new websites in Server's Websites interface and enable the Kerio Connect webapps on their respective ports. You will also need to export the SSL Certificate and Private Key from Kerio Connect and import this into Server to use for the SSL version of the site."
+<<<<<<< HEAD
 display dialog "Please enter the mail server's fully qualified hostname (e.g. mail.example.com)" buttons {"OK"} default button "OK" default answer "mail.example.com"
+=======
+display dialog "Please enter the mail server's fully qualified hostname (e.g. mail.example.com.au)" buttons {"OK"} default button "OK" default answer "mail.example.com"
+>>>>>>> 66fdcf5590faa1a05683eb916979529950d3e394
 set theHostname to text returned of the result
 display dialog "Please enter the HTTP port for Kerio Connect (e.g. 10080)" buttons {"OK"} default button "OK" default answer "10080"
 set theHTTPPort to text returned of the result
@@ -24,6 +32,7 @@ set theMailserverConf to text returned of the result
 set theApacheFolder to "/Library/Server/Web/Config/apache2/"
 set theWebappsFolder to theApacheFolder & "webapps/"
 
+<<<<<<< HEAD
 -- The variables set here control the file names etc that it generates.
 -- If you want to tweak things for a different application, for example,
 -- then you can modify the Application and/or Reverse DNS names here...
@@ -32,15 +41,27 @@ set theWebappsFolder to theApacheFolder & "webapps/"
 -- I could try and guess this from the mail server's domain name entered above, but whatever...
 set theReverseDNSName to "au.com.automatica."
 
+=======
+>>>>>>> 66fdcf5590faa1a05683eb916979529950d3e394
 -- This is the name of our webapp, entered here as a variable so it's easier to change this for other webapps
 set theHTTPName to "KerioConnect"
 set theHTTPSName to theHTTPName & "SSL"
 
+<<<<<<< HEAD
 -- If you're tweaking names, you shouldn't need to modify anything below this line...
+=======
+>>>>>>> 66fdcf5590faa1a05683eb916979529950d3e394
 -- This follows a similar naming convention to Apple's included webapps
 set theHTTPConfigName to "httpd_" & theHTTPName & "webapp.conf"
 set theHTTPSConfigName to "httpd_" & theHTTPSName & "webapp.conf"
 
+<<<<<<< HEAD
+=======
+-- The configuration plist files use reverse dns naming - put your domain name in here if you prefer. Ensure there is a full-stop at the end of it.
+-- I could try and guess this from the mail server's domain name entered above, but whatever...
+set theReverseDNSName to "au.com.automatica."
+
+>>>>>>> 66fdcf5590faa1a05683eb916979529950d3e394
 -- This follows a similar naming convention to Apple's included webapps
 set theHTTPAppName to theReverseDNSName & theHTTPName & "webapp.plist"
 set theHTTPSAppName to theReverseDNSName & theHTTPSName & "webapp.plist"
@@ -49,6 +70,14 @@ set theHTTPSAppName to theReverseDNSName & theHTTPSName & "webapp.plist"
 set theHTTPAppName to do shell script "echo " & quoted form of (theHTTPAppName) & " | tr A-Z a-z"
 set theHTTPSAppName to do shell script "echo " & quoted form of (theHTTPSAppName) & " | tr A-Z a-z"
 
+<<<<<<< HEAD
+=======
+--set theHTTPConfigFile to POSIX file (theApacheFolder & theHTTPConfigName)
+--set theHTTPSConfigFile to POSIX file (theApacheFolder & theHTTPSConfigName)
+--set theHTTPAppFile to POSIX file (theWebappsFolder & theHTTPAppName)
+--set theHTTPSAppFile to POSIX file (theWebappsFolder & theHTTPSAppName)
+
+>>>>>>> 66fdcf5590faa1a05683eb916979529950d3e394
 set theHTTPConfigFile to theApacheFolder & theHTTPConfigName
 set theHTTPSConfigFile to theApacheFolder & theHTTPSConfigName
 
@@ -147,6 +176,9 @@ my writeToFile(theHTTPConfigFile, theHTTPConfigFileContents)
 my writeToFile(theHTTPSConfigFile, theHTTPSConfigFileContents)
 my writeToFile(theHTTPAppFile, theHTTPAppFileContents)
 my writeToFile(theHTTPSAppFile, theHTTPSAppFileContents)
+<<<<<<< HEAD
 
 -- and we're done
+=======
+>>>>>>> 66fdcf5590faa1a05683eb916979529950d3e394
 display dialog "All Done. You can now go into Server.app and configure the HTTP and HTTPS web sites with the Kerio Connect webapp" buttons {"OK"}
