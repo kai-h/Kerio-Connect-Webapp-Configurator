@@ -34,11 +34,11 @@ Open a browser and be amazed that you can now hit Kerio Connect on ports 80 and 
 Files
 -----
 This script creates four files on your computer.
-Two Websites configuration .plist files are in /Library/Server/Web/Config/apache2/
+Two Websites configuration .plist files are in /Library/Server/Web/Config/apache2/webapps
 - au.com.automatica.kerioconnectwebapp.plist
 - au.com.automatica.kerioconnectsslwebapp.plist
 
-Two Apache configuration .conf files are in /Library/Server/Web/Config/apache2/webapps
+Two Apache configuration .conf files are in /Library/Server/Web/Config/apache2/
 - httpd_KerioConnectwebapp.conf
 - httpd_KerioConnectSSLwebapp.conf
 
